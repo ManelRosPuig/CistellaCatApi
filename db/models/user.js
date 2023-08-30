@@ -1,26 +1,20 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../sequelize.js';
+import ShoppingList from './shopping_list.js';
 
-const Product = sequelize.define('Product', {
-  uuid: {
-    type: DataTypes.UUIDV4,
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false
-  },
+const User = sequelize.define('User', {
   name: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  icon: {
+  surnames: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  color: {
+  email: {
     type: DataTypes.STRING,
     allowNull: false
-  },
+  }
 });
 
-Product.sync();
-
-export default Product;
+export default User;

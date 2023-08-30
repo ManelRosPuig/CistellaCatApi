@@ -1,12 +1,8 @@
-import { DataTypes } from 'sequelize';
+import { DataTypes, ForeignKeyConstraintError } from 'sequelize';
 import sequelize from '../sequelize.js';
+import User from './user.js';
 
 const ShoppingList = sequelize.define('ShoppingList', {
-  uuid: {
-    type: DataTypes.UUIDV4,
-    defaultValue: DataTypes.UUIDV4,
-    allowNull: false
-  },
   name: {
     type: DataTypes.STRING,
     allowNull: false
@@ -19,12 +15,15 @@ const ShoppingList = sequelize.define('ShoppingList', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  userUuid: {
-    type: DataTypes.UUIDV4,
-    allowNull: false
+  userId: {
+    type: DataTypes.INTEGER,
+    // references: {
+    //   model: User,
+    //   key: 'id'
+    // }
   }
 });
 
-ShoppingList.sync();
+// ShoppingList.sync({ force: true });
 
 export default ShoppingList;

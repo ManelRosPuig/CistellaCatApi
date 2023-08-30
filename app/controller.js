@@ -1,3 +1,10 @@
-// This file is to put any function
+// import User from '../db/model/user.js';
 
-// export default {};
+// Function to execute the user model
+function createUserTable() {
+  // 
+}
+
+export default {
+  createUserTable
+};

@@ -3,6 +3,6 @@ import controller from './controller.js';
 
 const router = express.Router();
 
-// router.post('/getCode', controller.getCode);
+router.post('/createUserTable', controller.createUserTable);
 
 export default router;
